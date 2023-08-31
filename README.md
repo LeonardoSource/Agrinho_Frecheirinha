@@ -1,5 +1,7 @@
 # Agrinho Frecheirinha 2023 - App de Educação em Saúde
 
+<img src="/assets/logoagrinho.png">
+
 Bem-vindo ao repositório do Agrinho Frecheirinha 2023, um aplicativo educacional desenvolvido para promover a saúde e o conhecimento entre os alunos das escolas. Este aplicativo é uma ferramenta interativa que visa disponibilizar materiais educacionais sobre saúde de maneira acessível e envolvente, além de proporcionar uma experiência de aprendizado divertida por meio de quizzes interativos.
 
 # Sobre o Aplicativo
@@ -14,4 +16,4 @@ Para tornar o aprendizado ainda mais envolvente, o aplicativo oferece quizzes in
 ## Interface Amigável: 
 A interface do aplicativo foi projetada tendo em mente a facilidade de uso para alunos e professores. A navegação intuitiva e os designs atrativos tornam a experiência do usuário agradável e intuitiva.
 
-Para mais informações, visite o blog do projeto em www.agrinho2023.blogspot.com.
+**Para mais informações, visite o blog do projeto em www.agrinho2023.blogspot.com.**
