@@ -1,6 +1,6 @@
-# appagrinho
+# Aplicativo Programa Agrinho
 
-A new Flutter project.
+Aplicativo desenvolvido para uso nas escolas que trabalham o programa Agrinho.
 
 ## Getting Started
 
