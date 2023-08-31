@@ -9,19 +9,11 @@ class Acoes extends StatefulWidget {
 }
 
 class _AcoesState extends State<Acoes> {
+  bool _isLoading = true;
   @override
   Widget build(BuildContext context) { 
     return 
-        WebViewScreen();
-  }
-}
-
-// conteudo da web page
-class WebViewScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    bool _isLoading = true;
-    return Scaffold(
+      Scaffold(
       
       body: 
           
@@ -30,14 +22,14 @@ class WebViewScreen extends StatelessWidget {
               InAppWebView(
                 initialUrlRequest: URLRequest(url: Uri.parse('https://agrinho2023.blogspot.com')),
                 onLoadStart: (controller, url) {
-
+                  setState(() {
                     _isLoading = true;
-                  
+                  });
                 },
                 onLoadStop: (controller, url) {
-                 
+                  setState(() {
                     _isLoading = false;
-                  
+                  });
                 },
               ),
               if (_isLoading)
