@@ -32,6 +32,11 @@ migrate_working_dir/
 .pub/
 /build/
 
+#ssh
+ssh-git
+ssh-git.pub
+
+
 # Symbolication related
 app.*.symbols
 
