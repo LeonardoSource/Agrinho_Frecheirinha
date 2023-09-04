@@ -1,4 +1,7 @@
+import 'package:ProgramaAgrinhoFrecheirinhaEscolaFFP/aboutfrecheirinha.dart';
 import 'package:flutter/material.dart';
+import 'aboutffp.dart';
+import 'aboutfrecheirinha.dart';
 //import 'carouselinicial.dart';
 
 class TelaInicial extends StatelessWidget {
@@ -109,10 +112,14 @@ class TelaInicial extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
 
-                    )),
+                    ),
+                ),
                     
                     // Animacao quando o botao da pontuuacao é pressionado
-                    onPressed: () => print('Conheça a Escola Francisco Ferreira Pontes'),
+                    onPressed: () => Navigator.push(
+                      context, 
+                      MaterialPageRoute(builder: ((context) => Escola()))
+                    ),
                     
                     child: const Text(
                     'Conheça a Escola Francisco Ferreira Pontes',
@@ -135,7 +142,9 @@ class TelaInicial extends StatelessWidget {
                     )),
                     
                     // Animacao quando o botao da pontuuacao é pressionado
-                    onPressed: () => print('Conheça Frecheirinha'),
+                    onPressed: () => Navigator.push(
+                      context, 
+                      MaterialPageRoute(builder: ((context) => MapSample()))),
                     
                     child: const Text(
                     'Conheça Frecheirinha',
