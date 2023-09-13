@@ -116,10 +116,7 @@ class TelaInicial extends StatelessWidget {
                 ),
                     
                     // Animacao quando o botao da pontuuacao é pressionado
-                    onPressed: () => Navigator.push(
-                      context, 
-                      MaterialPageRoute(builder: ((context) => Escola()))
-                    ),
+                    onPressed: () => print('ols'),
                     
                     child: const Text(
                     'Conheça a Escola Francisco Ferreira Pontes',
@@ -144,7 +141,7 @@ class TelaInicial extends StatelessWidget {
                     // Animacao quando o botao da pontuuacao é pressionado
                     onPressed: () => Navigator.push(
                       context, 
-                      MaterialPageRoute(builder: ((context) => MapSample()))),
+                      MaterialPageRoute(builder: ((context) => InfoCity()))),
                     
                     child: const Text(
                     'Conheça Frecheirinha',
