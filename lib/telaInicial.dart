@@ -1,8 +1,7 @@
-import 'package:ProgramaAgrinhoFrecheirinhaEscolaFFP/aboutfrecheirinha.dart';
 import 'package:flutter/material.dart';
 import 'aboutffp.dart';
 import 'aboutfrecheirinha.dart';
-//import 'carouselinicial.dart';
+import 'aboutagrinho.dart';
 
 class TelaInicial extends StatelessWidget {
   const TelaInicial({super.key});
@@ -92,7 +91,9 @@ class TelaInicial extends StatelessWidget {
                     )),
                     
                     // Animacao quando o botao da pontuuacao é pressionado
-                    onPressed: () => print('Sobre o Agrinho'),
+                    onPressed: () => Navigator.push(
+                      context, 
+                      MaterialPageRoute(builder: ((context) => InfoAgrinho()))),
                     
                     child: Text(
                     'Sobre o Agrinho',
@@ -116,7 +117,9 @@ class TelaInicial extends StatelessWidget {
                 ),
                     
                     // Animacao quando o botao da pontuuacao é pressionado
-                    onPressed: () => print('ols'),
+                    onPressed: () => Navigator.push(
+                      context, 
+                      MaterialPageRoute(builder: ((context) => InfoEscola()))),
                     
                     child: const Text(
                     'Conheça a Escola Francisco Ferreira Pontes',

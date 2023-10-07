@@ -1,34 +1,82 @@
 import 'package:flutter/material.dart';
+import 'package:photo_view/photo_view.dart';
+import 'package:photo_view/photo_view_gallery.dart';
 
 class InfoCity extends StatefulWidget {
-  const InfoCity({super.key});
-
   @override
-  State<InfoCity> createState() => _InfoCityState();
+  _ImageGalleryState createState() => _ImageGalleryState();
 }
 
-class _InfoCityState extends State<InfoCity> {
+class _ImageGalleryState extends State<InfoCity> {
+  final List<String> imageUrls = [
+    "assets/frecheirinha/alunos.png",
+    "assets/frecheirinha/amo.png",
+    "assets/frecheirinha/festa.png",
+    "assets/frecheirinha/flecha.png",
+    "assets/frecheirinha/olho.png",
+    "assets/frecheirinha/placa.png",
+    "assets/frecheirinha/praca.png",
+  ];
+
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(''),
+        title: Text('Galeria de Imagens'),
       ),
-      body: Container(
-        padding: EdgeInsets.all(20),
-        child: 
-        Column(
-          children: [
-            SizedBox(height: 10,),
-            Text(
-              'Frecheirinha é um município brasileiro do estado do Ceará. Localiza-se na Mesorregião do Noroeste Cearense e pertence à Região Metropolitana de Sobral. De acordo com o último Censo realizado pelo IBGE em 2010, Frecheirinha teria uma população de 12.991 habitantes, com uma densidade demográfica de 71,68 hab/km². Sua população estimada em 2019 era de 14.072 habitantes. É considerado atualmente como o maior polo de produção de moda íntima do Ceará e um dos maiores do Brasil, com indústrias que são consolidadas nacionalmente como a Diamantes Lingerie.',
-              textAlign: TextAlign.justify,
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
+              child: PhotoViewGallery.builder(
+                itemCount: imageUrls.length,
+                builder: (context, index) {
+                  return PhotoViewGalleryPageOptions(
+                    imageProvider: AssetImage(imageUrls[index]),
+                    minScale: PhotoViewComputedScale.contained,
+                    maxScale: PhotoViewComputedScale.covered * 2,
+                    heroAttributes: PhotoViewHeroAttributes(tag: index), // Para hero animation
+                  );
+                },
+                scrollPhysics: BouncingScrollPhysics(),
+                backgroundDecoration: BoxDecoration(
+                  color: Colors.green,
+                ),
+                pageController: PageController(),
+                onPageChanged: (index) {
+                  setState(() {
+                    currentIndex = index;
+                  });
+                },
               ),
-          ],
-        ),
-      
-      ), 
-      );
+            ),
+          ),
+          Container(
+            color: Colors.black.withOpacity(0.4),
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              'Imagem ${currentIndex + 1} de ${imageUrls.length}',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16.0,
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              'Frecheirinha é um município brasileiro do estado do Ceará. Localiza-se na Mesorregião do Noroeste Cearense e pertence à Região Metropolitana de Sobral. A produção industrial representa a principal fonte de renda e ocupação na cidade, sobretudo da mão-de-obra feminina. A cidade se destaca como um importante pólo produtor de lingerie de referenciada qualidade, exportada para vários mercados consumidores nacionais e internacionais.',
+              textAlign: TextAlign.justify,
+              style: TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
