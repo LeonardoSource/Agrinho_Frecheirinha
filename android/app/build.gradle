@@ -32,11 +32,6 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-        ...
-}
-
-
-android {
     namespace "com.example.appagrinho"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
